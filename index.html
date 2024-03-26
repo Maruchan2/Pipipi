@@ -146,3 +146,90 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <td>Legendaria</td>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td>3800 Créditos</td>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <td
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Formulario de Contacto</h1>
+        <form id="miFormulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+    
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+    
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    
+    <script>
+    document.getElementById('miFormulario').addEventListener('submit', function(event) {
+        // Evitar el envío automático del formulario
+        event.preventDefault();
+    
+        // Obtener los valores del formulario
+        var nombre = document.getElementById('nombre').value;
+        var email = document.getElementById('email').value;
+        var mensaje = document.getElementById('mensaje').value;
+    
+        // Realizar validaciones (aquí puedes agregar más validaciones según tus necesidades)
+        if (nombre.trim() === '' || email.trim() === '' || mensaje.trim() === '') {
+            alert('Por favor, completa todos los campos.');
+            return;
+        }
+    
+        // Aquí puedes realizar acciones adicionales, como enviar los datos a través de AJAX o realizar otras operaciones
+    
+        // Mostrar un mensaje de éxito
+        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+    
+        // Limpiar el formulario después de enviar
+        document.getElementById('miFormulario').reset();
+    });
+    </script>
+
+    
+
+
